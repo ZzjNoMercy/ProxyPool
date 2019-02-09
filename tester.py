@@ -21,7 +21,7 @@ class Tester(object):
     
     async def test_single_proxy(self, proxy):
         # 测试单个代理
-        conn = aiohttp.TCPConnector(verify_ssl=True)
+        conn = aiohttp.TCPConnector(verify_ssl=False)
         async with aiohttp.ClientSession(connector=conn) as session:
             try:
                 if isinstance(proxy, bytes):
